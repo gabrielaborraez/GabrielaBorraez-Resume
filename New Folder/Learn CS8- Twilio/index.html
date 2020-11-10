@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Website to sell the newest NHL game by EA Sports called NHL 21">
+    <meta name="author" content="862130304">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Title of your Website -->
+    <title>NHL 21</title>
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Main Header Section h1-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Preorder the new NHL 21 Game</h1>
+        <p class="lead font-weight-normal">This is the new generation of the NHL with our cover star Alex Ovechkin that will be available August 28th! In this new game you can carve your path to superstardom in an expanded Be A Pro mode and go down as one of the league’s greatest. On the ice, change up your attack with all new moves, dekes, dangles and evasive maneuvers, inspired by the league’s most groundbreaking innovators.</p>
+        <a class="btn btn-outline-secondary" href="https://www.ea.com/games/nhl/nhl-21">Coming soon</a>
+    </div>
+</div>
+    <nav class="site-header sticky-top py-1">
+    <!-- Top Menu Bar -->
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-1" href="https://www.ea.com/games/nhl/nhl-21/cover-athlete" target="_blank">Cover Athlete</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-2" href="https://www.ea.com/games/nhl/nhl-21" target="_blank">Facts</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-3" href="https://www.ea.com/games/nhl/nhl-21/gameplay" target="_blank">Gameplay</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-4" href="https://www.ea.com" target="_blank">EA Sports</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-5" href="https://www.ea.com/games/nhl/nhl-21/hut-rush" target="_blank">Gamemodes</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-6" href="https://www.microsoft.com/en-us/p/NHL-21-STANDARD-EDITION/BWZ8BZ85X5HK?emcid=EAFranchise2020&rtc=1&activetab=pivot:overviewtab" target="_blank">My Player</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-7" href="https://www.ea.com/games/nhl/nhl-21/top-50" target="_blank">Top Players</a>
+    </div>
+    <!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our educational content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage() {
+                console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "AC3cef34c047e74199fb6b3006598c84c8";
+                var authToken = "77e39a5441d34b9252702c9310d83991";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "12134087955" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + " Thank you for purchasing NHL 21!"
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization', 'Basic ' + btoa(base64encoded));
+                xhr.send(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">EA SPORTS</h2>
+            <p class="lead">Get NHL 21 August 28 or Preorder Now!</p>
+            <img class="mx-auto" src="For CS8 Lab 2.jpg" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+</nav>
+  </body>
+</html>
